@@ -3,12 +3,7 @@ services:
 
 before_install:
   - docker build -t sheron/react1 -f Dockerfile.dev .
-
-script: 
   - docker run sheron/react1 npm run test -- --coverage
+ 
+  
 
-after_script:
-  - echo "script ran well"
-
-after_success:
-  - echo "Build success SJ"
