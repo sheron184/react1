@@ -7,3 +7,14 @@ before_install:
 script: 
   - docker run -e CI=true sheron/react1 npm run test
 
+deploy:
+  provider: elasticbeanstalk
+  region: "northeast-1"
+  app: "docker-react"
+  env: "Docker-react-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-1-159518765380"
+  bucket_path: : "docker-ract"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
