@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - dcoker build -t sheron/react1 -f Dockerfile.dev .
+  - docker build -t sheron/react1 -f Dockerfile.dev .
 
 script: 
   - docker run sheron/react1 npm run test -- --coverage
