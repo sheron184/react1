@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - dcoker build -f -t sheron/react1 Dockerfile.dev .
+
+script: 
+  - docker run sheron/react1 npm run test -- --coverage
